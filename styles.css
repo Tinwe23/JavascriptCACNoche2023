@@ -1,3 +1,19 @@
-.button-success {
-    background-color: aquamarine;
+
+.fondo{
+        background-image: url("imagenes tp1/imagenes_integrador_front/ba1.jpg");
+        height:650px;
+        background-position: 40% 60%;
+    }
+    
+.fondonegro{
+        background-color: rgba(0, 0, 0, 55%);
+        height: 650px;
+        color: aliceblue;
+        text-align: right;
+        display: flex;
+        align-items: center;    /*alinea verticalmente al medio el div con el texto*/
+    }
+    
+div.container-fluid.contenidoseccion1{
+        padding-right: 5vw;
     }
