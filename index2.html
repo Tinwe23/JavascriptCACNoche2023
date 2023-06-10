@@ -86,7 +86,7 @@
           </div>
           <div class="form-group col-md-6">
             <label for="categoria">Categoria</label>
-            <select class="form-control" id="categoria" onchange="calcularTotal()">
+            <select class="form-control" id="categoria">
               <option value="ninguna">Ninguna</option>
               <option value="estudiante">Estudiante</option>
               <option value="trainee">Trainee</option>
@@ -97,9 +97,9 @@
         <div class="form-group">
           <label id="total">Total a Pagar: $ </label>
         </div>
-        <button type="delete" class="btn btn-success">Borrar</button>
-        <button type="submit" class="btn btn-success">Resumen</button>
-      </form>
+        <button class="btn btn-success">Borrar</button>
+        <button type="button" onclick="calcularTotal()" class="btn btn-success">Resumen</button>
+           </form>
     </div>
   </section>
 
