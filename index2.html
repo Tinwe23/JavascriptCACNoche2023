@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comprar Tickets</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script>
+
+    function calcularTotal() {
+      var cantidad = document.getElementById('cantidad').value;
+      var categoria = document.getElementById('categoria').value;
+      var preciototal = cantidad * 200;
+
+      if (categoria === 'estudiante') {
+        preciototal *= 0.2;
+      } else if (categoria === 'trainee') {
+        preciototal *= 0.5;
+      } else if (categoria === 'junior') {
+        preciototal *= 0.85;
+      }
+
+      document.getElementById('total').innerHTML = 'Total Price: ' + preciototal.toFixed(2);
+    }
+    
+  </script>
+</head>
+<body>
+
+  <section id="categories">
+    <div class="container">
+      <h2>Categorias de tickets</h2>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Estudiante</h5>
+              <p class="card-text">80% descuento para estudiantes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Trainee</h5>
+              <p class="card-text">50% descuento para trainees</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Junior</h5>
+              <p class="card-text">15% descuento para juniors</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking-form">
+    <div class="container">
+         <div class="row justify-content-center">
+          <div class="col">
+            <h5>VENTA</h5>
+            <h2>VALOR DE TICKET $200</h2>
+          </div>
+      </div>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+          </div>
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Correo">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" placeholder="Cantidad">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="categoria">Categoria</label>
+            <select class="form-control" id="categoria" onchange="calcularTotal()">
+              <option value="ninguna">Ninguna</option>
+              <option value="estudiante">Estudiante</option>
+              <option value="trainee">Trainee</option>
+              <option value="junior">Junior</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label id="total">Total a Pagar: $ </label>
+        </div>
+        <button type="delete" class="btn btn-success">Borrar</button>
+        <button type="submit" class="btn btn-success">Resumen</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
